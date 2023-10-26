@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { View, Text, Button } from "react-native";
 import { useCameraContext } from "./CameraContext";
 import { StyleSheet } from "react-native";
@@ -6,17 +6,20 @@ import { StyleSheet } from "react-native";
 function HomeScreen({ navigation }) {
   const { isLeftEyeOpen } = useCameraContext();
 
+  useEffect(() => {
+    if (isLeftEyeOpen) {
+      console.log("Deberia navegar hacia la 2da pantalla");
+      // Si isLeftEyeOpen es true, navega a la pantalla "Home"
+      navigation.navigate("Details");
+    }
+  }, [isLeftEyeOpen]);
+
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Home</Text>
       <Button
-        title="Go to Details"
-        onPress={() => {
-          if (isLeftEyeOpen) {
-            // Si isLeftEyeOpen es true, navega a la pantalla "Details"
-            navigation.navigate("Details");
-          }
-        }}
+        title="Avanzar 2da pantalla"
+        onPress={() => navigation.navigate("Details")}
       />
     </View>
   );

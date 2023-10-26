@@ -9,17 +9,17 @@ function DetailsScreen({ navigation }) {
 
   useEffect(() => {
     if (isLeftEyeOpen) {
-      buttonRef.current && buttonRef.current.click();
+      // Si isLeftEyeOpen es true, navega a la pantalla "Home"
+      navigation.navigate("Home");
     }
   }, [isLeftEyeOpen]);
 
   return (
     <View style={styles.container}>
-      <Text>Details Screen</Text>
+      <Text>2da pantall</Text>
       <Button
-        title="Go back to Home"
+        title="Volver al home"
         onPress={() => navigation.navigate("Home")}
-        ref={buttonRef}
       />
     </View>
   );
