@@ -5,7 +5,8 @@ const CameraContext = createContext();
 export function CameraProvider({ children }) {
   const [isCameraActive, setIsCameraActive] = useState(true); // La cámara está siempre activa
   const [isLeftEyeOpen, setIsLeftEyeOpen] = useState(false); // Estado del ojo izquierdo
-
+  const [isRightEyeOpen, setIsRightEyeOpen] = useState(false); // Estado del ojo izquierdo
+ 
   return (
     <CameraContext.Provider
       value={{
@@ -13,6 +14,9 @@ export function CameraProvider({ children }) {
         setIsCameraActive,
         isLeftEyeOpen,
         setIsLeftEyeOpen,
+        isRightEyeOpen,
+        setIsRightEyeOpen,
+        
       }}
     >
       {children}

@@ -5,8 +5,11 @@ import { StyleSheet } from "react-native";
 
 function HomeScreen({ navigation }) {
   const { isLeftEyeOpen } = useCameraContext();
+  const { isRightEyeOpen } = useCameraContext();
 
   useEffect(() => {
+    console.log("isleft eye open "+ isLeftEyeOpen);
+    console.log("isRight eye open "+ isRightEyeOpen);
     if (isLeftEyeOpen) {
       console.log("Deberia navegar hacia la 2da pantalla");
       // Si isLeftEyeOpen es true, navega a la pantalla "Home"

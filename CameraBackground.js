@@ -3,15 +3,13 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import { Camera } from "expo-camera";
 import * as FaceDetector from "expo-face-detector";
 import { useCameraContext } from "./CameraContext";
+
 export default function CameraBackground() {
+
   const [hasPermission, setHasPermission] = useState(false);
   const [faceData, setFaceData] = useState([]);
-  const { setLeftEyeOpen } = useCameraContext();
-  //const [isLeftEyeOpen, setIsLeftEyeOpen] = useState(false);
-  const [isRightEyeOpen, setIsRightEyeOpen] = useState(false);
-  const [isSmiling, setIsSmiling] = useState(false);
-  const [currentView, setCurrentView] = useState(1);
   const { setIsLeftEyeOpen } = useCameraContext();
+  const { setIsRightEyeOpen } = useCameraContext(); // cambio
 
   useEffect(() => {
     (async () => {
@@ -32,11 +30,10 @@ export default function CameraBackground() {
       const sonrisa = firstFace.smilingProbability > 0.7;
       setIsLeftEyeOpen(ojoIzquierdoAbierto);
       setIsRightEyeOpen(ojoDerechoAbierto);
-      setIsSmiling(sonrisa);
+      
     } else {
       setIsLeftEyeOpen(false);
       setIsRightEyeOpen(false);
-      setIsSmiling(false);
     }
   }, [faceData]);
 
