@@ -12,10 +12,10 @@ export function CameraProvider({ children }) {
       value={{
         isCameraActive,
         setIsCameraActive,
-        isLeftEyeOpen,
-        setIsLeftEyeOpen,
         isRightEyeOpen,
         setIsRightEyeOpen,
+        isLeftEyeOpen,
+        setIsLeftEyeOpen,
         
       }}
     >

@@ -8,14 +8,12 @@ function HomeScreen({ navigation }) {
   const { isRightEyeOpen } = useCameraContext();
 
   useEffect(() => {
-    console.log("isleft eye open "+ isLeftEyeOpen);
-    console.log("isRight eye open "+ isRightEyeOpen);
-    if (isLeftEyeOpen) {
+    if (isRightEyeOpen) {
       console.log("Deberia navegar hacia la 2da pantalla");
       // Si isLeftEyeOpen es true, navega a la pantalla "Home"
       navigation.navigate("Details");
     }
-  }, [isLeftEyeOpen]);
+  }, [isLeftEyeOpen,isRightEyeOpen]);
 
   return (
     <View style={styles.container}>

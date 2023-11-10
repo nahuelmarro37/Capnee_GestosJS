@@ -22,8 +22,8 @@ export default function CameraBackground() {
     if (faceData.length > 0) {
       const firstFace = faceData[0];
       const ojoDerechoAbierto =
-        firstFace.rightEyeOpenProbability < 0.3 &&
-        firstFace.leftEyeOpenProbability > 0.5;
+        firstFace.leftEyeOpenProbability > 0.9 &&
+        firstFace.rightEyeOpenProbability < 0.1;
       const ojoIzquierdoAbierto =
         firstFace.rightEyeOpenProbability > 0.9 &&
         firstFace.leftEyeOpenProbability < 0.1;
