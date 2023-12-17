@@ -8,10 +8,7 @@ function DetailsScreen({ navigation }) {
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    if (isLeftEyeOpen) {
-      // Si isLeftEyeOpen es true, navega a la pantalla "Home"
-      navigation.navigate("Home");
-    }
+   
   }, [isLeftEyeOpen]);
 
   return (
